@@ -1,0 +1,83 @@
+/** @format */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background: rgb(23, 45, 78);
+	
+}
+nav{
+	padding: 3rem;
+	display: flex;
+	justify-content: center;
+}
+
+.nav-links{
+	display: flex;
+	list-style: none;
+	gap: 3rem;
+	font-size: 2.2rem;
+	
+}
+.nav-links a{
+	text-decoration: none;
+	color: aliceblue;
+	font-weight: bold;
+}
+.nav-item{
+	position: relative;
+}
+.active-nav{
+	height: 5px;
+	background: rgb(227, 233, 239);
+	border-radius: 1rem;
+	/* margin: 0.2rem 0.5rem; */
+	position: absolute;
+	left: 0;
+	bottom: -50;
+	width: 100%;
+}
+section{
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: repeat(6, 1fr);
+	margin: 2rem 3rem;
+
+
+}
+.card{
+	height: 15rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	border: 2px solid #ffffff55;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: #ffffff22;
+	font-size: 1.2rem;
+	grid-column: span 3;
+	padding: 5rem;
+	box-shadow: 0.15rem 0.15rem 0rem #000;
+	gap: 2rem;
+}
+.card p{
+	line-height: 2rem;
+	display: none;
+
+}
+.card.active p{
+	display: block;
+}
+.card.active{
+	grid-column: 1 / span 6;
+	grid-row: 1;
+	order: 0;
+	height: auto;
+}
+card.is-inactive{
+	grid-column: span 2 ;
+}
