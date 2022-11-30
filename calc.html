@@ -5,12 +5,34 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   
    <link rel="stylesheet" href="calc.css">
    <script defer src="calc.js"></script>
    <title>Calc</title>
 </head>
 
 <body>
+   <!-- <canvas class="canvas"></canvas> -->
+
+    <nav>
+      <ul class="nav-links">
+         <div class="nav-item">
+            <li><a href="#">home</a></li>
+            <div class="active-nav"></div>
+         </div>
+         <div class="nav-item">
+            <li><a href="calc.html">calc</a></li>
+
+         </div>
+         <div class="nav-item">
+            <li><a href="sun.html">sun</a></li>
+         </div>
+         <div class="nav-item">
+            <li><a href="animation.html">animation</a></li>
+         </div>
+      </ul>
+   </nav>
    <div class="calc-grid">
 
       <div class="output">
@@ -46,6 +68,18 @@
       <button data-equals class="span-two">=</button>
    </div>
 
+   <script src="./index.js"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Flip.min.js"
+      integrity="sha512-byzUdBXaTSrgrlWDvkyU6TBkRSUUiI3EzVIdZtrYEUx1hFnsel9QmEs3QWpKo+8N+G9eOjSxQzFWF1PLq0+WVw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
+      integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  
+   
+    <script src="./gsap.js"></script>
 </body>
 
 </html>

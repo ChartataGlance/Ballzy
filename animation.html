@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+
+   <title>Document</title>
+</head>
+
+<body>
+   <nav>
+      <ul class="nav-links">
+         <div class="nav-item">
+            <li><a href="/">home</a></li>
+            <div class="active-nav"></div>
+         </div>
+         <div class="nav-item">
+            <li><a href="calc.html">calc</a></li>
+
+         </div>
+         <div class="nav-item">
+            <li><a href="sun.html">sun</a></li>
+         </div>
+         <div class="nav-item">
+            <li><a href="animation.html">animation</a></li>
+         </div>
+      </ul>
+   </nav>
+
+
+   <center><input type="text" value="12:45 pm" class="time-pickable" readonly>
+      <div class="time-picker">
+         <select class="time-picker__select">
+            <option value="01">01</option>
+         </select>
+         :
+         <select class="time-picker__select">
+            <option value="05">05</option>
+         </select>
+
+         <select class="time-picker__select">
+            <option value="am">am</option>
+            <option value="pm">pm</option>
+         </select>
+      </div>
+   </center>
+
+
+
+   <section>
+      <div id="pr1" class="card">
+         <h1>Awesome pro code1 </h1>
+         <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            quod voluptas quasi at laudantium repellendus ipsum.
+         </p>
+      </div>
+      <div id="pr2" class="card">
+         <h1>Awesome pro code2 </h1>
+         <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            quod voluptas quasi at laudantium repellendus ipsum.
+         </p>
+      </div>
+      <div id="pr3" class="card">
+         <h1>Awesome pro code 3 </h1>
+         <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            quod voluptas quasi at laudantium repellendus ipsum.
+         </p>
+      </div>
+      <div id="pr4" class="card">
+         <h1>Awesome pro code 4 </h1>
+         <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            quod voluptas quasi at laudantium repellendus ipsum.
+         </p>
+      </div>
+
+   </section>
+
+
+   <script>
+      function getTimePartsFormsPickable(timePickable) {
+         const pattern = /^(\d+):(\d+) (am|pm)$/;
+         const [hour, minute, meridiem] = Array.from(timePickable.value.match(pattern)).splice(1);
+         // console.log(result);
+
+         return {
+            hour,
+            minute,
+            meridiem
+         };
+
+
+      }
+      const demoPick = document.querySelector(".time-pickable");
+      console.log(getTimePartsFormsPickable(demoPick));
+   </script>
+
+
+
+
+
+
+
+
+
+   <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Flip.min.js"
+      integrity="sha512-byzUdBXaTSrgrlWDvkyU6TBkRSUUiI3EzVIdZtrYEUx1hFnsel9QmEs3QWpKo+8N+G9eOjSxQzFWF1PLq0+WVw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
+      integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script src="gsap.js"></script>
+<script src="./index.js"></script> -->
+</body>
+
+</html>

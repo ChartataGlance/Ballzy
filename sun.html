@@ -5,55 +5,86 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+
    <script src="./sun.js" defer></script>
    <title>Document</title>
-   <style>
-      *,
-      *::after,
-      *::before {
-         padding: 0;
-         margin: 0;
-         box-sizing: border-box;
-         font-weight: normal;
-         font-family: Gothem Rounded, sans-serif;
-      }
-
-
-      body {
-         padding: 0;
-         margin: 0;
-         background: rgb(23, 45, 78);
-      }
-   </style>
 </head>
 
 <body>
+   <nav>
+      <ul class="nav-links">
+         <div class="nav-item">
+            <li><a href="/">home</a></li>
+            <div class="active-nav"></div>
+         </div>
+         <div class="nav-item">
+            <li><a href="calc.html">calc</a></li>
+
+         </div>
+         <div class="nav-item">
+            <li><a href="sun.html">sun</a></li>
+         </div>
+         <div class="nav-item">
+            <li><a href="animation.html">animation</a></li>
+         </div>
+      </ul>
+   </nav>
    <div id="demo"></div>
    <script>
       var x = document.getElementById("demo");
 
       navigator.geolocation.getCurrentPosition(showPosition);
-      function showPosition(position) 
-      {   
-       
+      function showPosition(position) {
+
          var date = new Date().sunrise(position.coords.latitude, position.coords.longitude)
-         var srTime = date
-        
 
-
-
-         x.innerHTML =
-            "Latitude: " + position.coords.latitude + position.coords.longitude +
-            "<br> Sunrise" +  srTime ;       
+         x.innerHTML = date ;  
+         // "Latitude: " + position.coords.latitude + position.coords.longitude + 
+         string = toString.date
+         console.log(string);
 
       }
 
 
-        
-        
-      
+      // function getTimePartsFormsPickable() {
+      //    // const pattern = /^() () () () ():():() () ()$/;
+      //    // const res = Array.from(srt.value.match(pattern));
+      //    // //  console.log(res);
+
+      //    // return {
+      //    //    weekday: mon,
+      //    //    month: nov,
+      //    //    date: 30,
+      //    //    year:2022,
+      //    //    sunrise:12,
+      //    //    sunrise:25,
+      //    //    sunrise:45,
+      //    //    mean:gmt
+         
+      //    // };
+      //    const demoPick = document.getElementById("#demo");
+      //    console.log(getTimePartsFormsPickable(demoPick));
+      // }
+
+
+
+
+
 
    </script>
+   <script src="./index.js"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Flip.min.js"
+      integrity="sha512-byzUdBXaTSrgrlWDvkyU6TBkRSUUiI3EzVIdZtrYEUx1hFnsel9QmEs3QWpKo+8N+G9eOjSxQzFWF1PLq0+WVw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
+      integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  
+   
+    <script src="./gsap.js"></script>
 </body>
 
 </html>

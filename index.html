@@ -5,26 +5,40 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="index.css">
    <title>Document</title>
 </head>
 
 
 <body>
+   <nav>
+      <ul class="nav-links">
+         <div class="nav-item">
+            <li><a href="/">home</a></li>
+            <div class="active-nav"></div>
+         </div>
+         <div class="nav-item">
+            <li><a href="calc.html">calc</a></li>
+
+         </div>
+         <div class="nav-item">
+            <li><a href="sun.html">sun</a></li>
+         </div>
+         <div class="nav-item">
+            <li><a href="animation.html">animation</a></li>
+         </div>
+      </ul>
+   </nav>
    <h1 class="ball-text">trading report</h1>
    <canvas class="canvas">
       
    </canvas>
    <form name="Calculator" class="calculator">
-      <table border="5" align="center" cellpadding="55" cellspacing="52" bgcolor="#c0c0c0">
+      <table width="100%" border="5" align="center" cellpadding="25" cellspacing="20" bgcolor="#200">
+
          <tr>
-            <td>
-               <input type="text" name="Input" Size="12" id="display">
-               <br>
-            </td>
-         </tr>
-         <tr>
-            <td>
+            <td align="center">
                <input type="button" name="one" style="font-size:30px" value=" 1 "
                   OnClick="Calculator.Input.value += '1'">
                <input type="button" name="two" style="font-size:30px" value=" 2 "
@@ -62,7 +76,6 @@
                   OnClick="Calculator.Input.value += ' / ' ">
                <br>
             </td>
-
          </tr>
       </table>
    </form>
@@ -70,9 +83,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
       integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
-      integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./gsap.js"></script>
    <script src="./index.js"></script>
 </body>
 
