@@ -10,16 +10,15 @@ class Calculator {
 		this.currentOperand = "";
 		this.previousOperand = "";
 		this.operation = undefined;
-		
 	}
 
 	delete() {
-      this.currentOperand = this.currentOperand.toString().slice(0, -1)
-   }
+		this.currentOperand = this.currentOperand.toString().slice(0, -1);
+	}
 
 	appendNumber(number) {
-		 if (number === "." && this.currentOperand.includes(".")) return;
-		this.currentOperand =  this.currentOperand.toString() + number.toString();
+		if (number === "." && this.currentOperand.includes(".")) return;
+		this.currentOperand = this.currentOperand.toString() + number.toString();
 	}
 
 	chooseOperation(operation) {
@@ -51,17 +50,41 @@ class Calculator {
 			case "÷":
 				computation = prev / current;
 				break;
-         default:
-            return
+			default:
+				return;
 		}
-      this.currentOperand = computation
-      this.operation = undefined
-      this.previousOperand = ''
+		this.currentOperand = computation;
+		this.operation = undefined;
+		this.previousOperand = "";
 	}
 
+	getDisplayNumber(number) {
+		const stringNumber = number.toString()
+		const integerDigits = parseFloat(stringNumber.split('.')[0])
+		const decimalDigits = stringNumber.split('.')[1]
+		let integerDisplay
+		if (isNaN(integerDigits))
+		{
+			integerDisplay = ''
+		} else {
+			integerDisplay = integerDigits.toLocaleString('en', {
+				maximumFractionDigits: 0
+			})
+		}
+		if(decimalDigits != null)
+		{
+			return `${integerDisplay}.${decimalDigits}`
+		} else { return integerDisplay }
+		
+	}
 	updateDisplay() {
-		this.currentTextElement.innerText = this.currentOperand;
-		this.previousTextElement.innerText = this.previousOperand;
+		this.currentTextElement.innerText = this.getDisplayNumber(this.currentOperand)
+		if (this.operation != null) 
+		{
+			this.previousTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+		} 
+		else 
+		{ this.previousTextElement.innerText = '' }
 	}
 }
 
@@ -78,25 +101,25 @@ const calc = new Calculator(previousTextElement, currentTextElement);
 numberButtons.forEach((button) => {
 	button.addEventListener("click", () => {
 		calc.appendNumber(button.innerText);
-		calc.updateDisplay()
+		calc.updateDisplay();
 	});
 });
-operationButtons.forEach(button => {
-   button.addEventListener('click', () => {
-      calc.chooseOperation(button.innerText)
-      calc.updateDisplay()
-   })
-})
+operationButtons.forEach((button) => {
+	button.addEventListener("click", () => {
+		calc.chooseOperation(button.innerText);
+		calc.updateDisplay();
+	});
+});
 equalsButton.addEventListener("click", (button) => {
 	calc.compute();
 	calc.updateDisplay();
 });
 
-allClearButton.addEventListener('click', button => {
-   calc.clear()
-   calc.updateDisplay()
-})
-deleteButton.addEventListener('click', button => {
-   calc.delete()
-   calc.updateDisplay()
-})
+allClearButton.addEventListener("click", (button) => {
+	calc.clear();
+	calc.updateDisplay();
+});
+deleteButton.addEventListener("click", (button) => {
+	calc.delete();
+	calc.updateDisplay();
+});

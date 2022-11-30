@@ -1,0 +1,15 @@
+*, *::after, *::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-weight: normal;
+	font-family: Gothem Rounded, sans-serif;
+}
+
+
+body {
+	padding: 0;
+	margin: 0;
+	background: rgb(23, 45, 78);
+	
+}

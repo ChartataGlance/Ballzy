@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="./sun.js" defer></script>
+   <title>Document</title>
+   <style>
+      *,
+      *::after,
+      *::before {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         font-weight: normal;
+         font-family: Gothem Rounded, sans-serif;
+      }
+
+
+      body {
+         padding: 0;
+         margin: 0;
+         background: rgb(23, 45, 78);
+      }
+   </style>
+</head>
+
+<body>
+   <div id="demo"></div>
+   <script>
+      var x = document.getElementById("demo");
+
+      navigator.geolocation.getCurrentPosition(showPosition);
+      function showPosition(position) 
+      {   
+       
+         var date = new Date().sunrise(position.coords.latitude, position.coords.longitude)
+         var srTime = date
+        
+
+
+
+         x.innerHTML =
+            "Latitude: " + position.coords.latitude + position.coords.longitude +
+            "<br> Sunrise" +  srTime ;       
+
+      }
+
+
+        
+        
+      
+
+   </script>
+</body>
+
+</html>
